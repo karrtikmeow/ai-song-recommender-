@@ -34,7 +34,7 @@ def get_time_context():
 
 # --- 3. Streamlit UI Build (English Interface) ---
 st.title("📻 AI Hindi Music Radio")
-st.write("Pick your mood and I'll find a random Hindi track for you!")
+st.write("Pick your mood and I'll find a random Hindi track for you!!")
 
 # Input (English UI)
 user_mood = st.selectbox("How are you feeling right now?", list(vibe_lookup.keys()))
