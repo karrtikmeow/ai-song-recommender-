@@ -4,17 +4,17 @@ import streamlit as st
 import streamlit.components.v1 as components
 from ytmusicapi import YTMusic
 
-# --- 1. Page Configuration ---
+# --- 1. page congfiguration ---
 st.set_page_config(page_title="Hindi Mood Radio", page_icon="📻", layout="centered")
 
-# Initialize the YouTube Music API
+# initialize YouTube Music API
 @st.cache_resource
 def init_yt():
     return YTMusic()
 
 yt_api = init_yt()
 
-# --- 2. Data Mapping (Optimized for Hindi Music Styles) ---
+# --- 2. data mappingg (optimized for Hindi Music Styles) ---
 vibe_lookup = {
     "Happy": {"styles": ["bollywood dance", "upbeat hindi pop", "bhangra"]},
     "Sad": {"styles": ["hindi sad emotional", "arijit singh melancholy", "ghazal"]},
@@ -39,7 +39,7 @@ st.write("Pick your mood and I'll find a random Hindi track for you!")
 # Input (English UI)
 user_mood = st.selectbox("How are you feeling right now?", list(vibe_lookup.keys()))
 
-# The Generate Button
+# generate button
 if st.button("🎲 Play a Random Hindi Song", type="primary", use_container_width=True):
     with st.spinner(f"Searching for the perfect {user_mood.lower()} track..."):
         
