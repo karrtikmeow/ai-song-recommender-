@@ -41,7 +41,7 @@ user_mood = st.selectbox("How are you feeling right now?", list(vibe_lookup.keys
 
 # generate button
 if st.button("🎲 Play a Random Hindi Song", type="primary", use_container_width=True):
-    with st.spinner(f"Searching for the perfect {user_mood.lower()} track..."):
+    with st.spinner(f"searching for the perfect {user_mood.lower()} track..."):
         
         # Logic calculations
         vibe_data = vibe_lookup[user_mood]
@@ -56,7 +56,7 @@ if st.button("🎲 Play a Random Hindi Song", type="primary", use_container_widt
             search_results = yt_api.search(search_string, filter="songs", limit=20)
             
             if not search_results:
-                st.warning("Couldn't find an exact match. Try clicking again!")
+                st.warning("couldn't find an exact match. Try clicking again!")
             else:
                 # Randomly select ONE track from the pool
                 chosen_track = random.choice(search_results)
